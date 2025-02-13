@@ -1,14 +1,80 @@
-Hello World
+<!DOCTYPE html>
 <html>
 <head>
     <title>Georges Elizee</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --text-color: black;
+            --bg-color: white;
+            --border-color: black;
+        }
+
+        [data-theme="dark"] {
+            --text-color: white;
+            --bg-color: #1a1a1a;
+            --border-color: white;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        nav {
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.5rem;
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .dark-mode {
+            text-decoration: underline;
+            cursor: pointer;
+            margin-left: auto;
+            margin-bottom: auto;
+            color: blue;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
+    <header>
+        <img src="https://github.com/ge-ogre.png" alt="Georges Elizee" width="200">
+        <div class="header-content">
+            <h1>Georges Leys Elizee</h1>
+            <p>(1x) Developer</p>
+        </div>
+        <a href="#" class="dark-mode">Dark Mode</a>
+    </header>
 
-<a href="https://docs.google.com/file/d/11ZInz8LnAMSYqUC50JQrYQVGiwG-f4q0ZeZm-z3dZxc">Resume</a>
-<a href="http://github.com/ge-ogre">Github</a>
+    <nav>
+        <a href="https://docs.google.com/file/d/11ZInz8LnAMSYqUC50JQrYQVGiwG-f4q0ZeZm-z3dZxc">Resume</a>
+        <a href="http://github.com/ge-ogre">Github</a>
+        <a href="https://www.linkedin.com/in/georgese">LinkedIn</a>
+    </nav>
 
+    <script>
+        function darkMode() {
+            const body = document.body;
+            body.dataset.theme = body.dataset.theme === 'dark' ? 'light' : 'dark';
+        }
+        document.querySelector('.dark-mode').addEventListener('click', darkMode);
+    </script>
 </body>
 
 </html>
